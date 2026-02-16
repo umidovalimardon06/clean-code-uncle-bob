@@ -1,92 +1,117 @@
-# Session-1 Notes
+# Session-2 Notes
 
-## The Big Picture
-
-"Current society is dependent on software" - other people think they rule the world but they handed it to us. We rule.
-
-**The Regulatory Path:**
-- Legislation (regulations) → civil servants (devs become)
-- To avoid these we need to establish "Ethics"
-- "Invented rules into laws" - this is what happened to doctors, lawyers, architects... (regulation)
-
-**Fragile Premise:**
-If we broke that everything fails
-
----
-
-## Speed vs. Quality
+## The Truth About Comments
 
 **The Paradox:**
-- Programmers are slow because they make mess
-- If they avoid the mess they will be fast
-- Desire to be fast → make a mess
-- **To go fast, do well**
+- "Today's languages are too rich" - we have better tools than comments
+- "Nothing can be quite so helpful as a good comment"
+- Yet: "Every comment is a failure, not a great achievement"
 
-**Code Quality:**
-- Clean code: WTF
-- Messy code: WTF, WTF, WTF
-
----
-
-## Function Design Principles
-
-### Abstraction Levels
-Example:
-- `WikiPage` (highest-level of abstraction)
-- `StringBuilder` (lowest-level of abstraction)
-
-**Rule:** Every line in a function should be on a same level of abstraction
-
-### Core Rules
-- **Exit-early** pattern
-- Functions should be small
-- Functions should do one thing
-- Extract methods from function by proper naming
-
-### Arguments
-- No more than 3 arguments for functions
-- Never (mostly) pass boolean to the function
-
-### Code Philosophy
-- Least surprising code
-- Avoid switch statements (dependency magnets)
+**The Problem:**
+- "Comments can be lies because nobody refactors them" - they rot
+- Code changes, comments stay static
+- Comments become misleading over time
 
 ---
 
-## Design Patterns
+## The Comment Hierarchy
 
-### Open-Closed Principle: Polymorphism
-Shape example:
-```
-    S
-    c  --> dep
-    c  --> dep
-    c  --> dep
+### First: Try Everything Else
+**Rule:** Don't comment first - commenting is a last resort
+
+**The Better Approach:**
+If ideas aren't clearly explained in code, try refactoring before commenting
+
+**Example - Employee Promotion Check:**
+```java
+// Bad: requires comment to understand
+if((employee.flags || HOURLY_FLAG>35) && employee.age>65) {...}
+
+// Good: self-documenting code
+if(employee.isEligibleForPromotion()) {...}
 ```
 
-### Advanced Patterns
-- Lambdas and command patterns as arguments
-- Try-block should contain only one line
+---
+
+## Acceptable Comments
+
+**1. Copyright Notices**
+- Legal requirement (mostly in USA)
+
+**2. Informative Comments**
+- Format specifications: `// hh:mm:ss`
+- Regular expression explanations
+
+**3. Explanation of Intent**
+- Race condition explanations
+- Non-obvious assertions:
+```java
+assert a == a;  // simple equality
+assert a > b;   // comparison
+assert ...;     // complex - hard to see intent
+```
+
+**4. Warning of Consequences**
+```java
+// WARNING: This code writes 10,000 lines to file
+```
+
+**5. Amplifications**
+```java
+match().group(3).trim();  // DON'T remove trim - required for parsing
+```
 
 ---
 
-## Java Origin Story
+## JavaDocs
 
-**Timeline:** 1992-1993
-- James Gosling
-- Contract-programming division
-- Created Java (Oak) for coding television box without C++
-
-**Sun's Strategy:**
-- Sun was hardware company, sold pieces of metal
-- Best way to sell hardware is winning the heart and minds of programmers
-- Programmers do the buying decisions
-- Then they used Java (by renaming it)
+**Purpose:** Generating library documentation for external users
+- Produces UI documentation
+- Use for public APIs only
 
 ---
 
-## Key Terms
+## Naming Conventions
 
-- **Green-field:** starting from scratch, no legacy dependency
-- **Fragile-premise:** if we broke that everything fails
-- **Dependency magnets:** switch statements that create coupling
+### Avoid Meaningless Names
+
+**Bad:**
+```java
+int d;  // elapsed time in days
+```
+
+**Good:**
+```java
+int elapsedTimeInDays;
+```
+
+### Scope-Based Length Rules
+
+**Small Scopes → Short Names:**
+- Inside `if()`, `for()`, `while()` blocks
+- Local variables can be brief
+
+**Large Scopes → Long Names:**
+- Class-level static variables: can be very long
+- Instance variables: can be longish
+- **Note:** For functions it's the opposite (small functions = longer names)
+
+---
+
+
+
+## Anti-Patterns
+
+### Avoid Number Series
+- Don't use: `var1`, `var2`, `var3`
+- Don't use: `data1`, `data2`, `data3`
+- Use meaningful, descriptive names instead
+
+---
+
+## Key Principles
+
+- Code should explain itself
+- Comments are admission of failure to express in code
+- Refactor first, comment last
+- Good names eliminate need for comments
