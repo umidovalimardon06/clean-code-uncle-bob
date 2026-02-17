@@ -1,117 +1,51 @@
-# Session-2 Notes
+# CTO Expectations — Uncle Bob
 
-## The Truth About Comments
-
-**The Paradox:**
-- "Today's languages are too rich" - we have better tools than comments
-- "Nothing can be quite so helpful as a good comment"
-- Yet: "Every comment is a failure, not a great achievement"
-
-**The Problem:**
-- "Comments can be lies because nobody refactors them" - they rot
-- Code changes, comments stay static
-- Comments become misleading over time
+> Today there are 100M programmers. In 1948 there was 1. The number doubles roughly every 5 years.
+> Professors are ~10 years behind. Most of the industry is junior.
 
 ---
 
-## The Comment Hierarchy
+## 1. We Will Not Ship Shit
 
-### First: Try Everything Else
-**Rule:** Don't comment first - commenting is a last resort
+Beta does not mean broken. Everyone expects good code — there is no exception for you.
 
-**The Better Approach:**
-If ideas aren't clearly explained in code, try refactoring before commenting
+## 2. We Will Always Be Ready
 
-**Example - Employee Promotion Check:**
-```java
-// Bad: requires comment to understand
-if((employee.flags || HOURLY_FLAG>35) && employee.age>65) {...}
+If you're doing agile, you must be ready to deploy at any time. Always shippable.
 
-// Good: self-documenting code
-if(employee.isEligibleForPromotion()) {...}
-```
+## 3. Stable Productivity
 
----
+The longer a project runs, the slower it does **not** get. Hurrying creates mess. Mess slows you down.
 
-## Acceptable Comments
+## 4. Inexpensive Adaptability
 
-**1. Copyright Notices**
-- Legal requirement (mostly in USA)
+- Small change → small cost
+- Big change → bigger cost
 
-**2. Informative Comments**
-- Format specifications: `// hh:mm:ss`
-- Regular expression explanations
+Software is *change-able ware* — design for it.
 
-**3. Explanation of Intent**
-- Race condition explanations
-- Non-obvious assertions:
-```java
-assert a == a;  // simple equality
-assert a > b;   // comparison
-assert ...;     // complex - hard to see intent
-```
+## 5. Continuous Improvement
 
-**4. Warning of Consequences**
-```java
-// WARNING: This code writes 10,000 lines to file
-```
+Always be making the codebase, process, and team better.
 
-**5. Amplifications**
-```java
-match().group(3).trim();  // DON'T remove trim - required for parsing
-```
+## 6. Fearless Competence
 
----
+Fragile tests are a sign of someone new to test-driven development. Tests must be designed **as part of the system**, not bolted on. Maintain code coverage. If you're afraid to change the code, you've lost.
 
-## JavaDocs
+## 7. We Will Not Dump on QA
 
-**Purpose:** Generating library documentation for external users
-- Produces UI documentation
-- Use for public APIs only
+QA is the most stressed team. The right mindset: **QA should find nothing.** Don't use them as a bug filter.
 
----
+## 8. We Cover Each Other
 
-## Naming Conventions
+Pair programming, even just 30 minutes a day. Know what your teammates are doing well enough to cover them.
 
-### Avoid Meaningless Names
+## 9. Honest Estimates
 
-**Bad:**
-```java
-int d;  // elapsed time in days
-```
+Never give a single number. Always give three:
 
-**Good:**
-```java
-int elapsedTimeInDays;
-```
-
-### Scope-Based Length Rules
-
-**Small Scopes → Short Names:**
-- Inside `if()`, `for()`, `while()` blocks
-- Local variables can be brief
-
-**Large Scopes → Long Names:**
-- Class-level static variables: can be very long
-- Instance variables: can be longish
-- **Note:** For functions it's the opposite (small functions = longer names)
-
----
-
-
-
-## Anti-Patterns
-
-### Avoid Number Series
-- Don't use: `var1`, `var2`, `var3`
-- Don't use: `data1`, `data2`, `data3`
-- Use meaningful, descriptive names instead
-
----
-
-## Key Principles
-
-- Code should explain itself
-- Comments are admission of failure to express in code
-- Refactor first, comment last
-- Good names eliminate need for comments
+| Scenario | Example |
+|---|---|
+| Best case | 1 week |
+| Nominal case | 3 weeks |
+| Worst case | 6 weeks |
