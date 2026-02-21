@@ -3,16 +3,22 @@
 This repository contains multiple branches:
 
 1. [Session-1](https://github.com/umidovalimardon06/clean-code-uncle-bob/tree/s-1)
-Topics discussed:
+Topic: Software craftsmanship 
  
 2. [Session-2](https://github.com/umidovalimardon06/clean-code-uncle-bob/tree/s-2)
-Topics discussed: 
+Topic: Comments & Naming Conventions
  
 3. [Session-3](https://github.com/umidovalimardon06/clean-code-uncle-bob/tree/s-3)
-Topics discussed:
+Topic: CTO Expectations / Professional Standards
  
 4. [Session-4](https://github.com/umidovalimardon06/clean-code-uncle-bob/tree/s-4)
-Topics discussed:
+Topic: 
+ 
+5. [Session-5](https://github.com/umidovalimardon06/clean-code-uncle-bob/tree/s-5)
+Topic: Software Architecture Principles
+ 
+6. [Session-6](https://github.com/umidovalimardon06/clean-code-uncle-bob/tree/s-6)
+Topic: Agile Project Management
 
 
 
