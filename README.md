@@ -32,10 +32,32 @@ they thought:  "we can remain productive and be messy,We can clean up it later!"
 
 Jason Gormans experiment: "same program 6times in 6 separate days"
 
-a solution to executives dilemma:sitting and make them understand whe productivity paradox.
+a solution to executives dilemma:sitting and make them understand whe productivity paradox,talking 
+to them cleanly
 
+the only way to reverse the decline in productivity is to realize:
+-"the only way to get fast is to go well"
 
+2-values of a software:
+1.What it does
+2.its structure
 
+"if the software isn't changeable,it becomes worthless tomorrow"
+
+*Stakeholders want changes:
+but they never prioritize architecture.
+"I have two kinds of problems,the urgent and important,and
+the important are never urgent"
+
+responsibility=> "communicate with stakeholders on an understandable manner".
+
+"people skill guys" -> salespeople,manager.
+
+"the web is a delivery machenism"
+"web is a I/O device"
+
+Oracle's strategy: "data-asset" "great term for CEOs"
+"database is detail isolate it".
 
 
 
