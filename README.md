@@ -1,67 +1,86 @@
-Session-5 notes
+# Session 5 — Architecture Notes
+> *Notes from Uncle Bob's session on software architecture*
 
-Working vs working right.
-working - "getting software working is easy,functional correct(runs,produces output)"
-working right - "getting it right is the hard part"
--architecture
--requirements
--abstractions
--performance-characteristics
--security-model
--model
--operational-behavior(maintainability,observability)
-*this requires discipline and domain understanding
+---
 
-all magic happens when you get it right:
-*codebase -> composable,predictable,easy to extend
-*features feel cheap
+## Working vs. Working Right
 
-main goal of architecture(architect):
-"is to minimize the human-resources required to build 
-and maintain software systems"
-efforts - constant and shrinks over time. -> then the design is good.
+**Working** — getting software functional and correct: it runs, it produces output.
 
-startup-culture: "USA,west making a mess as fast as you can in hopes that 
-you can produce something that will put you on the exponential growth of profit"
-they thought:  "we can remain productive and be messy,We can clean up it later!"
+**Working right** — the hard part. It requires discipline and domain understanding across:
 
-"slow and steady wins the race"
-"the secret to going fast is not to build the roadblocks that will make you slow"
+- Architecture
+- Requirements
+- Abstractions
+- Performance characteristics
+- Security model
+- Domain model
+- Operational behavior (maintainability, observability)
 
-*study&practice:long-term
+### When you get it right:
+- The codebase becomes composable, predictable, and easy to extend
+- Features feel cheap
 
-Jason Gormans experiment: "same program 6times in 6 separate days"
+---
 
-a solution to executives dilemma:sitting and make them understand whe productivity paradox,talking 
-to them cleanly
+## The Main Goal of Architecture
 
-the only way to reverse the decline in productivity is to realize:
--"the only way to get fast is to go well"
+> "Minimize the human resources required to build and maintain software systems."
 
-2-values of a software:
-1.What it does
-2.its structure
+A good design is one where effort stays **constant** — or even **shrinks** — over time.
 
-"if the software isn't changeable,it becomes worthless tomorrow"
+---
 
-*Stakeholders want changes:
-but they never prioritize architecture.
-"I have two kinds of problems,the urgent and important,and
-the important are never urgent"
+## The Startup Culture Trap
 
-responsibility=> "communicate with stakeholders on an understandable manner".
+The US/West startup mentality: *"Make a mess as fast as you can in hopes of hitting exponential growth."*
 
-"people skill guys" -> salespeople,manager.
+The assumption: *"We can stay productive while being messy. We can clean it up later."*
 
-"the web is a delivery machenism"
-"web is a I/O device"
+This is wrong.
 
-Oracle's strategy: "data-asset" "great term for CEOs"
-"database is detail isolate it".
+> "Slow and steady wins the race."
+> "The secret to going fast is not to build the roadblocks that will make you slow."
 
+**Study and practice must be long-term.**
 
+*Jason Gorman's experiment: wrote the same program 6 times over 6 separate days.*
 
+---
 
+## The Productivity Paradox
 
+The decline in productivity can only be reversed by accepting one truth:
 
+> **"The only way to get fast is to go well."**
 
+A solution to the executive dilemma: sit down with stakeholders and explain the productivity paradox in clear, understandable terms.
+
+---
+
+## The Two Values of Software
+
+1. **What it does** — behavior, features
+2. **Its structure** — how it is built
+
+> "If the software isn't changeable, it becomes worthless tomorrow."
+
+---
+
+## Stakeholders and Architecture
+
+Stakeholders always want changes — but they never prioritize architecture.
+
+> "I have two kinds of problems: the urgent and the important. The important are never urgent."
+
+The **responsibility** of architects and developers is to communicate with stakeholders in an understandable manner — this is a people skill, like that of a salesperson or manager.
+
+---
+
+## On the Web and Databases
+
+- *"The web is a delivery mechanism."*
+- *"The web is an I/O device."*
+- *"The database is a detail — isolate it."*
+
+Oracle's strategy frames data as a **"data asset"** — a great term for CEOs — but the underlying principle remains: don't let the database drive your architecture.
